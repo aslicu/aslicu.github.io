@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Aslı Çelik — Research Assistant at Kocaeli University"
+  />
+  <title>Aslı Çelik</title>
+
+  <style>
+    :root {
+      --background: #ffffff;
+      --text: #202124;
+      --muted: #5f6368;
+      --line: #e2e2e2;
+      --image-background: #f5f5f5;
+      --max-width: 920px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      text-align: left;
+    }
+
+    a {
+      color: var(--text);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    .page {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+      padding: 64px 0 40px;
+    }
+
+    /* HERO */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 64px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      text-align: left;
+    }
+
+    h1,
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+    }
+
+    .role {
+      margin: 12px 0 22px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .bio {
+      max-width: 620px;
+      margin: 0;
+      font-size: 1rem;
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+    }
+
+    .bio a {
+      color: inherit;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 22px;
+      margin-top: 24px;
+      font-size: 0.94rem;
+    }
+
+    .contact {
+      color: var(--muted);
+    }
+
+    .photo-wrap {
+      width: 220px;
+    }
+
+    .photo {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: var(--image-background);
+    }
+
+    /* SHARED SECTION STYLES */
+
+    section:not(.hero) {
+      padding-top: 48px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 1.65rem;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    /* SELECTED PUBLICATIONS */
+
+    .publication-list {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .publication-image-link {
+      position: relative;
+      display: flex;
+      width: 170px;
+      aspect-ratio: 16 / 10;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--image-background);
+      text-decoration: none;
+    }
+
+    .publication-image-link:hover {
+      opacity: 0.82;
+    }
+
+    .publication-image {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-placeholder {
+      padding: 12px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    .publication-year {
+      margin: 0 0 5px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .publication h3 {
+      margin: 0 0 7px;
+    }
+
+    .publication h3 a {
+      text-decoration: none;
+    }
+
+    .publication h3 a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .publication p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    /* GRANTS */
+
+    .grant-list {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .grant {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 22px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .grant-year {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .grant h3 {
+      margin: 0 0 4px;
+    }
+
+    .grant h3 a {
+      text-decoration: none;
+    }
+
+    .grant h3 a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .grant p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* RESEARCH PROJECT */
+
+    .research-projects {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .research-project {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .research-project h3 {
+      max-width: 780px;
+      margin: 0 0 7px;
+      font-size: 1.04rem;
+      line-height: 1.5;
+    }
+
+    .project-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .project-date {
+      display: inline-block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .research-project strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* SIDE PROJECTS */
+
+    .side-projects {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .side-project {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 26px;
+      align-items: start;
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .side-project h3 {
+      margin: 0 0 7px;
+    }
+
+    .side-project h3 a {
+      text-decoration: none;
+    }
+
+    .side-project h3 a:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .side-project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .project-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 0.92rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 56px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 720px) {
+      .page {
+        width: min(calc(100% - 28px), var(--max-width));
+        padding-top: 36px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .photo-wrap {
+        grid-row: 1;
+        width: 170px;
+      }
+
+      .bio {
+        text-align: left;
+        hyphens: none;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .publication-image-link {
+        width: min(100%, 280px);
+      }
+
+      .grant,
+      .side-project {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <h1>Aslı Çelik</h1>
+        <p class="role">Research Assistant, Ph.D. · Kocaeli University</p>
+
+        <p class="bio">
+          I am a Research Assistant at
+          <a
+            href="https://www.kocaeli.edu.tr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Kocaeli University</a>
+          in Türkiye. My primary research interests lie in deep learning for
+          video and image understanding. I received my B.Sc., M.Sc., and Ph.D.
+          degrees from the Department of Electronics and Communication
+          Engineering at
+          <a
+            href="https://www.kocaeli.edu.tr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Kocaeli University</a>, where I was advised by
+          <a
+            href="https://avesis.kocaeli.edu.tr/urhano"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Prof. Dr. Oğuzhan Urhan</a>. Prior to my engineering studies, I earned
+          a B.A. in Psychology from
+          <a
+            href="https://w3.bilkent.edu.tr/bilkent/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >İhsan Doğramacı Bilkent University</a>, Ankara, Türkiye.
+        </p>
+
+        <nav class="links" aria-label="Profile links">
+          <span class="contact">Contact: asli.celik@kocaeli.edu.tr</span>
+          <a
+            href="https://scholar.google.com/citations?user=EyInDkMAAAAJ"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Google Scholar</a>
+          <a
+            href="https://github.com/aslicu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >GitHub</a>
+
+          <a
+            href="https://www.linkedin.com/in/aslicelik"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn</a>
+        </nav>
+      </div>
+
+      <div class="photo-wrap">
+        <img class="photo" src="profile.jpg" alt="Portrait of Aslı Çelik" />
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+
+      <div class="publication-list">
+        <article class="publication">
+          <a
+            class="publication-image-link"
+            href="https://arxiv.org/abs/2606.21358"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open LEViL paper"
+          >
+            <span class="image-placeholder">Add LEViL figure</span>
+            <img
+              class="publication-image"
+              src="images/levil.jpg"
+              alt="Figure from the LEViL paper"
+              onload="this.previousElementSibling.hidden=true"
+              onerror="this.style.display='none'"
+            />
+          </a>
+
+          <div>
+            <p class="publication-year">2026</p>
+            <h3>
+              <a
+                href="https://arxiv.org/abs/2606.21358"
+                target="_blank"
+                rel="noopener noreferrer"
+              >LEViL: Label-Efficient Video Learning via Zero-Shot Distillation over VLM-Generated Pseudo-Label Spaces</a>
+            </h3>
+            <p>A. Çelik · arXiv preprint arXiv:2606.21358</p>
+          </div>
+        </article>
+
+        <article class="publication">
+          <a
+            class="publication-image-link"
+            href="https://doi.org/10.1007/s11760-025-04887-x"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open transfer learning paper"
+          >
+            <span class="image-placeholder">Add transfer learning figure</span>
+            <img
+              class="publication-image"
+              src="images/transfer-learning.jpg"
+              alt="Figure from the transfer learning paper"
+              onload="this.previousElementSibling.hidden=true"
+              onerror="this.style.display='none'"
+            />
+          </a>
+
+          <div>
+            <p class="publication-year">2025</p>
+            <h3>
+              <a
+                href="https://doi.org/10.1007/s11760-025-04887-x"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Transfer Learning for Video Action Recognition: A Comparative Overview of Weight Initialization Strategies</a>
+            </h3>
+            <p>A. Çelik · <em>Signal, Image and Video Processing</em>, 19, 1306</p>
+          </div>
+        </article>
+
+        <article class="publication">
+          <a
+            class="publication-image-link"
+            href="https://doi.org/10.1007/s10845-020-01704-9"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open defective pixel detection paper"
+          >
+            <span class="image-placeholder">Add LCD detection figure</span>
+            <img
+              class="publication-image"
+              src="images/lcd-detection.jpg"
+              alt="Figure from the LCD defective pixel detection paper"
+              onload="this.previousElementSibling.hidden=true"
+              onerror="this.style.display='none'"
+            />
+          </a>
+
+          <div>
+            <p class="publication-year">2022</p>
+            <h3>
+              <a
+                href="https://doi.org/10.1007/s10845-020-01704-9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >A Real-Time Defective Pixel Detection System for LCDs Using Deep Learning-Based Object Detectors</a>
+            </h3>
+            <p>
+              A. Çelik, A. Küçükmanisa, A. Sümer, A. T. Çelebi, O. Urhan ·
+              <em>Journal of Intelligent Manufacturing</em>, 33(4), 985–994
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="grants">
+      <h2>Grants &amp; Fellowships</h2>
+
+      <div class="grant-list">
+        <article class="grant">
+          <div class="grant-year">2026</div>
+          <div>
+            <h3>
+              <a
+                href="https://tubitak.gov.tr/en/scholarships/postdoctoral/research-scholarship-programs/2219-international-postdoctoral-research-fellowship-program-turkish-citizens"
+                target="_blank"
+                rel="noopener noreferrer"
+              >TÜBİTAK 2219 International Postdoctoral Research Fellowship</a>
+            </h3>
+            <p>The Scientific and Technological Research Council of Türkiye</p>
+          </div>
+        </article>
+
+        <article class="grant">
+          <div class="grant-year">2025</div>
+          <div>
+            <h3>
+              <a
+                href="https://tubitak.gov.tr/tr/destekler/akademik/ulusal-destek-programlari/1002-hizli-destek-modulu"
+                target="_blank"
+                rel="noopener noreferrer"
+              >TÜBİTAK 1002-A Rapid Support Program</a>
+            </h3>
+            <p>The Scientific and Technological Research Council of Türkiye</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="research-projects">
+      <h2>Research Projects</h2>
+
+      <div class="research-projects">
+        <article class="research-project">
+          <h3>
+            Label- and Data-Efficient Learning Approaches and Data Augmentation
+            Techniques for Computer Vision-Based Action Recognition
+          </h3>
+          <p class="project-meta">
+            <strong>Principal Investigator</strong> · TÜBİTAK 1002-A Rapid Support Program
+          </p>
+          <span class="project-date">Sep 2025 – Sep 2026</span>
+        </article>
+
+        <article class="research-project">
+          <h3>Defective Pixel Detection Using Image Processing Methods</h3>
+          <p class="project-meta">
+            <strong>Scholarship Student</strong> · TÜBİTAK-TEYDEB 1505
+            University–Industry Collaboration Support Program
+          </p>
+          <span class="project-date">Sep 2018 – Dec 2019</span>
+        </article>
+
+        <article class="research-project">
+          <h3>Speech and Speaker Recognition for Mobile Devices</h3>
+          <p class="project-meta">
+            <strong>Scholarship Student</strong> · TÜBİTAK 3001 R&amp;D Project Grant
+          </p>
+          <span class="project-date">Jan 2015 – May 2016</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="side-projects">
+      <h2>Side Projects</h2>
+
+      <div class="side-projects">
+        <article class="side-project">
+          <a
+            class="publication-image-link"
+            href="https://aslicu.github.io/the-little-book-of-art/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open The Little Book of Art project"
+          >
+            <span class="image-placeholder">Add project image</span>
+            <img
+              class="publication-image"
+              src="images/little-book-of-art.jpg"
+              alt="The Little Book of Art project preview"
+              onload="this.previousElementSibling.hidden=true"
+              onerror="this.style.display='none'"
+            />
+          </a>
+
+          <div>
+            <h3>
+              <a
+                href="https://aslicu.github.io/the-little-book-of-art/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >The Little Book of Art</a>
+            </h3>
+            <p>
+              A digital art-discovery project presenting artworks from museum
+              collections with short, accessible, AI-assisted texts.
+            </p>
+            <a
+              class="project-link"
+              href="https://aslicu.github.io/the-little-book-of-art/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Visit project</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>© 2026 Aslı Çelik</footer>
+  </main>
+</body>
+</html>
